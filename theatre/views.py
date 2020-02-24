@@ -37,7 +37,7 @@ class MovieViewSet(GenericViewMixin):
             serializer = self.get_serializer(data=data)
             if serializer.is_valid(raise_exception=True):
                 serializer.save()
-                return Response(serializer.data, status=status.HTTP_200_OK)
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception as ex:
             # todo: handle log
             return Response({'error': str(ex)}, status=status.HTTP_400_BAD_REQUEST)
@@ -83,7 +83,7 @@ class RoomViewSet(GenericViewMixin):
             serializer = self.get_serializer(data=data)
             if serializer.is_valid(raise_exception=True):
                 serializer.save()
-                return Response(serializer.data, status=status.HTTP_200_OK)
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception as ex:
             # todo: handle log
             return Response({'error': str(ex)}, status=status.HTTP_400_BAD_REQUEST)
@@ -150,7 +150,7 @@ class RoomBookingViewSet(GenericViewMixin):
             print(data)
             if serializer.is_valid(raise_exception=True):
                 serializer.save()
-                return Response(serializer.data, status=status.HTTP_200_OK)
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception as ex:
             # todo: handle log
             return Response({'error': str(ex)}, status=status.HTTP_400_BAD_REQUEST)
@@ -223,7 +223,7 @@ class TicketViewSet(GenericViewMixin):
             serializer = self.get_serializer(data=data)
             if serializer.is_valid(raise_exception=True):
                 serializer.save()
-                return Response(serializer.data, status=status.HTTP_200_OK)
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception as ex:
             # todo: handle log
             return Response({'error': str(ex)}, status=status.HTTP_400_BAD_REQUEST)

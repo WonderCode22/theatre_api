@@ -28,8 +28,8 @@ class MovieSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         instance.title = validated_data.get('title', instance.title)
-        instance.start_at = validated_data.get('title', instance.start_at)
-        instance.screen_time = validated_data.get('title', instance.screen_time)
+        instance.start_at = validated_data.get('start_at', instance.start_at)
+        instance.screen_time = validated_data.get('screen_time', instance.screen_time)
         instance.save()
         return instance
 
